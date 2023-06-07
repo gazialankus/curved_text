@@ -9,3 +9,8 @@
 ## 0.1.2
 
 * Updated author on LICENSE 
+
+## 0.1.3
+
+* Added targetRadius to optionally have it curve up and down around a fixed point. 
+

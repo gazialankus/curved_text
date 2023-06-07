@@ -15,18 +15,23 @@ class CurvedText extends StatelessWidget {
     required this.curvature,
     required this.text,
     required this.textStyle,
+    this.targetRadius,
     super.key,
   });
 
   final double curvature;
   final String text;
   final TextStyle textStyle;
+  final double? targetRadius;
 
   @override
   Widget build(BuildContext context) {
     const maxRadius = 100000;
     final desiredRadius = 1 / curvature.abs();
     final radius = desiredRadius.abs() > maxRadius ? desiredRadius.sign * maxRadius : desiredRadius;
+
+    final targetRadius = this.targetRadius;
+    final yDisp = targetRadius != null ? -curvature.sign * (targetRadius * targetRadius / radius) : 0;
 
     final yTranslate = curvature.isNegative ? -radius : radius;
     final direction = curvature.isNegative ? Direction.counterClockwise : Direction.clockwise;
@@ -41,7 +46,7 @@ class CurvedText extends StatelessWidget {
       startAngleAlignment: StartAngleAlignment.center,
       placement: Placement.middle,
       painterDelegate: (canvas, size, painter) {
-        canvas.translate(0, yTranslate);
+        canvas.translate(0, yTranslate + yDisp);
         painter.paint(canvas, size);
       },
     );

@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
             curvature: curvature,
             text: text,
             textStyle: textStyle,
+            targetRadius: 50,
           );
         },
       )
