@@ -1,39 +1,29 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Curved text widget. You do not have to worry about a larger circle, 
+you just curl your widget in place.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Given a curvature (1/radius), a text string and a text style, creates a 
+curved text in the center of the space defined by parent's constraints.  
+
+|![](straight.png)   |![](curved_up.png)   |![](curved_down.png)   |
+|---|---|---|
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Just place it in a widget with size constraints and the text (not the center 
+of a virtual circle) will be centered in it and will be curved in place. 
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
 ```dart
-const like = 'sample';
+return CurvedText(
+    curvature: 0.02,
+    text: 'Hello, Flutter!',
+    textStyle: TextStyle(fontSize: 18, color: Colors.black),
+);
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+Uses the https://pub.dev/packages/flutter_arc_text widget.
