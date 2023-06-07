@@ -1,7 +1,7 @@
 name: curved_text
 description: Text that is curved in place with a certain curvature value.
 version: 0.1.0
-homepage: https://gbot.dev
+homepage: https://github.com/gazialankus/curved_text
 
 environment:
   sdk: '>=2.12.0 <4.0.0'
