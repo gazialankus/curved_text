@@ -1,6 +1,6 @@
 name: curved_text
 description: Text that is curved in place with a certain curvature value.
-version: 0.1.1
+version: 0.1.2
 homepage: https://github.com/gazialankus/curved_text
 
 environment:
