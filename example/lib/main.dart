@@ -12,29 +12,32 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Storybook(
-    initialRoute: '/stories/curved-text',
-    children: [
-      Story(
-        background: Colors.white,
-        name: 'Curved text',
-        builder: (_, k) {
-          final curvature = k.slider(label: 'Curvature', initial: double.minPositive, min: -0.05, max: 0.05);
+        initialRoute: '/stories/curved-text',
+        children: [
+          Story(
+            background: Colors.white,
+            name: 'Curved text',
+            builder: (_, k) {
+              final curvature = k.slider(
+                  label: 'Curvature',
+                  initial: double.minPositive,
+                  min: -0.05,
+                  max: 0.05);
 
-          final text = k.text(
-            label: 'Text',
-            initial: 'Hello, Flutter!',
-          );
-          const textStyle = TextStyle(fontSize: 18, color: Colors.black);
+              final text = k.text(
+                label: 'Text',
+                initial: 'Hello, Flutter!',
+              );
+              const textStyle = TextStyle(fontSize: 18, color: Colors.black);
 
-          return CurvedText(
-            curvature: curvature,
-            text: text,
-            textStyle: textStyle,
-            targetRadius: 50,
-          );
-        },
-      )
-    ],
-  );
+              return CurvedText(
+                curvature: curvature,
+                text: text,
+                textStyle: textStyle,
+                targetRadius: 50,
+              );
+            },
+          )
+        ],
+      );
 }
-
