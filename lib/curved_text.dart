@@ -26,8 +26,8 @@ class CurvedText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const maxRadius = 100000;
-    final desiredRadius = 1 / curvature.abs();
+    const maxRadius = 100000.0;
+    final desiredRadius = 1.0 / curvature.abs();
     final radius = desiredRadius.abs() > maxRadius
         ? desiredRadius.sign * maxRadius
         : desiredRadius;
@@ -35,19 +35,19 @@ class CurvedText extends StatelessWidget {
     final targetRadius = this.targetRadius;
     final yDisp = targetRadius != null
         ? -curvature.sign * (targetRadius * targetRadius / radius)
-        : 0;
+        : 0.0;
 
     final yTranslate = curvature.isNegative ? -radius : radius;
     final direction =
         curvature.isNegative ? Direction.counterClockwise : Direction.clockwise;
-    final startAngle = curvature.isNegative ? pi : 0;
+    final startAngle = curvature.isNegative ? pi : 0.0;
 
     return ArcText(
       direction: direction,
       radius: radius,
       text: text,
       textStyle: textStyle,
-      startAngle: startAngle.toDouble(),
+      startAngle: startAngle,
       startAngleAlignment: StartAngleAlignment.center,
       placement: Placement.middle,
       painterDelegate: (canvas, size, painter) {
