@@ -14,14 +14,14 @@ class CurvedText extends StatelessWidget {
   const CurvedText({
     required this.curvature,
     required this.text,
-    required this.textStyle,
+    this.textStyle,
     this.targetRadius,
     super.key,
   });
 
   final double curvature;
   final String text;
-  final TextStyle textStyle;
+  final TextStyle? textStyle;
   final double? targetRadius;
 
   @override
