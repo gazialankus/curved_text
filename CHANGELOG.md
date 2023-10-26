@@ -14,3 +14,6 @@
 
 * Added targetRadius to optionally have it curve up and down around a fixed point. 
 
+## 0.2.0
+
+* TextStyle is now optional and can set style with DefaultTextStyle. Thanks @bramp!
